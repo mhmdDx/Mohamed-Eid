@@ -76,6 +76,7 @@ export default function Home() {
               transition={{ duration: 0.3 }}
             >
               <Image
+                 style={{ borderRadius: "50%", objectFit: "cover" }}
                 src="https://avatars.githubusercontent.com/u/208473855?v=4"
                 alt="Profile"
                 fill
