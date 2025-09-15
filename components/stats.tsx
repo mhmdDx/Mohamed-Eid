@@ -15,10 +15,10 @@ function StatItem({ value, label }: StatProps) {
 export function Stats() {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 my-12">
-      <StatItem value="3" label="Years of Experience" />
-      <StatItem value="5+" label="Projects Completed" />
-      <StatItem value="5" label="Happy Clients" />
-      <StatItem value="3" label="Years of Experience" />
+      <StatItem value="2" label="Years of Experience" />
+      <StatItem value="3+" label="Projects Completed" />
+      <StatItem value="3" label="Happy Clients" />
+      <StatItem value="2" label="Years of Experience" />
     </div>
   )
 }
