@@ -12,6 +12,60 @@ import { Navbar } from "@/components/navbar"
 import { Phone, Mail, MapPin } from "lucide-react"
 import { motion } from "framer-motion"
 
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: {
+    duration: 1.2,
+    ease: [0.25, 0.46, 0.45, 0.94], // Custom cubic-bezier for smooth easing
+  },
+}
+
+const fadeInLeft = {
+  initial: { opacity: 0, x: -80 },
+  animate: { opacity: 1, x: 0 },
+  transition: {
+    duration: 1.4,
+    ease: [0.25, 0.46, 0.45, 0.94],
+    type: "spring",
+    stiffness: 100,
+    damping: 15,
+  },
+}
+
+const fadeInRight = {
+  initial: { opacity: 0, x: 80 },
+  animate: { opacity: 1, x: 0 },
+  transition: {
+    duration: 1.4,
+    ease: [0.25, 0.46, 0.45, 0.94],
+    type: "spring",
+    stiffness: 100,
+    damping: 15,
+  },
+}
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.3,
+    },
+  },
+}
+
+const staggerItem = {
+  initial: { opacity: 0, y: 40 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
@@ -19,80 +73,83 @@ export default function Home() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 pt-32 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <motion.h1
-              className="text-4xl lg:text-6xl font-bold mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
+          <motion.div variants={staggerContainer} initial="initial" animate="animate">
+            <motion.h1 className="text-4xl lg:text-6xl font-bold mb-4" variants={staggerItem}>
               I Am Mohamed Eid
               <span className="block text-primary mt-2">
-                <TypingAnimation text="Next-Level Web Developer." speed={80} />
+                <TypingAnimation text="Next-Level Web Developer." speed={60} />
               </span>
             </motion.h1>
-            <motion.p
-              className="text-gray-400 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
+            <motion.p className="text-gray-400 mb-8" variants={staggerItem}>
               I help their company and experience problems by building accessible and inclusive web products and digital
               experiences.
             </motion.p>
-            <motion.div
-              className="flex gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
-            >
+            <motion.div className="flex gap-4" variants={staggerItem}>
               <a href="https://wa.me/+201220949800" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-primary text-white hover:bg-primary/90">
-                  Contact Me
-                </Button>
+                <motion.div
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { duration: 0.3, ease: "easeOut" },
+                  }}
+                  whileTap={{
+                    scale: 0.95,
+                    transition: { duration: 0.1 },
+                  }}
+                >
+                  <Button size="lg" className="bg-primary text-white hover:bg-primary/90 transition-all duration-300">
+                    Contact Me
+                  </Button>
+                </motion.div>
               </a>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-white bg-transparent"
+              <motion.div
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.3, ease: "easeOut" },
+                }}
+                whileTap={{
+                  scale: 0.95,
+                  transition: { duration: 0.1 },
+                }}
               >
-                Download CV
-              </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-primary text-primary hover:bg-primary hover:text-white bg-transparent transition-all duration-300"
+                >
+                  Download CV
+                </Button>
+              </motion.div>
             </motion.div>
           </motion.div>
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
+          <motion.div className="relative" {...fadeInRight} transition={{ ...fadeInRight.transition, delay: 0.6 }}>
             <motion.div
               className="relative aspect-square max-w-[400px] mx-auto"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
+              whileHover={{
+                scale: 1.08,
+                rotate: 2,
+                transition: {
+                  duration: 0.6,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 20,
+                },
+              }}
+              whileTap={{ scale: 0.95 }}
             >
               <Image
-               style={{ borderRadius: "50%", objectFit: "cover", boxShadow: "1px 5px 10px rgb(139 92 246)" }}
+                   style={{ borderRadius: "50%", objectFit: "cover", boxShadow: "1px 5px 10px rgb(139 92 246)" }}
                 src="https://avatars.githubusercontent.com/u/208473855?v=4"
                 alt="Profile"
                 fill
-                className="rounded-2xl object-cover"
+                className="rounded-xl object-cover transition-all duration-500"
                 priority
-                styles={{ borderRadius: "50%" }}
               />
             </motion.div>
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-        >
+        <motion.div {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 1.0 }}>
           <Stats />
         </motion.div>
       </section>
@@ -100,37 +157,64 @@ export default function Home() {
       {/* Other Sections */}
       <div className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{
+            duration: 1.2,
+            ease: [0.25, 0.46, 0.45, 0.94],
+            type: "spring",
+            stiffness: 80,
+            damping: 20,
+          }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           <Services />
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{
+            duration: 1.2,
+            ease: [0.25, 0.46, 0.45, 0.94],
+            type: "spring",
+            stiffness: 80,
+            damping: 20,
+            delay: 0.2,
+          }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           <Projects />
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{
+            duration: 1.2,
+            ease: [0.25, 0.46, 0.45, 0.94],
+            type: "spring",
+            stiffness: 80,
+            damping: 20,
+            delay: 0.4,
+          }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           <Skills />
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{
+            duration: 1.2,
+            ease: [0.25, 0.46, 0.45, 0.94],
+            type: "spring",
+            stiffness: 80,
+            damping: 20,
+            delay: 0.6,
+          }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           <Testimonials />
         </motion.div>
@@ -139,48 +223,103 @@ export default function Home() {
         <motion.section
           className="py-16"
           id="contact"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          transition={{
+            duration: 1.2,
+            ease: [0.25, 0.46, 0.45, 0.94],
+            type: "spring",
+            stiffness: 80,
+            damping: 20,
+          }}
+          viewport={{ once: true, margin: "-100px" }}
         >
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-3xl font-bold mb-4">Let's Get In Touch</h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
                 Have a project in mind or want to discuss potential opportunities? I'm just a message away.
               </p>
-            </div>
+            </motion.div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -60 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{
+                  duration: 1.0,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                  delay: 0.3,
+                }}
                 viewport={{ once: true }}
               >
                 <div className="space-y-6">
-                  <motion.div className="flex items-center gap-4" whileHover={{ x: 10 }} transition={{ duration: 0.2 }}>
-                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                  <motion.div
+                    className="flex items-center gap-4"
+                    whileHover={{
+                      x: 15,
+                      transition: { duration: 0.4, ease: "easeOut" },
+                    }}
+                  >
+                    <motion.div
+                      className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center"
+                      whileHover={{
+                        scale: 1.1,
+                        backgroundColor: "rgba(var(--primary), 0.3)",
+                        transition: { duration: 0.3 },
+                      }}
+                    >
                       <Phone className="text-primary" size={24} />
-                    </div>
+                    </motion.div>
                     <div>
                       <h3 className="font-semibold">Phone</h3>
                       <p className="text-gray-400">+201220949800</p>
                     </div>
                   </motion.div>
-                  <motion.div className="flex items-center gap-4" whileHover={{ x: 10 }} transition={{ duration: 0.2 }}>
-                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                  <motion.div
+                    className="flex items-center gap-4"
+                    whileHover={{
+                      x: 15,
+                      transition: { duration: 0.4, ease: "easeOut" },
+                    }}
+                  >
+                    <motion.div
+                      className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center"
+                      whileHover={{
+                        scale: 1.1,
+                        backgroundColor: "rgba(var(--primary), 0.3)",
+                        transition: { duration: 0.3 },
+                      }}
+                    >
                       <Mail className="text-primary" size={24} />
-                    </div>
+                    </motion.div>
                     <div>
                       <h3 className="font-semibold">Email</h3>
                       <p className="text-gray-400">eidh17267@gmail.com</p>
                     </div>
                   </motion.div>
-                  <motion.div className="flex items-center gap-4" whileHover={{ x: 10 }} transition={{ duration: 0.2 }}>
-                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                  <motion.div
+                    className="flex items-center gap-4"
+                    whileHover={{
+                      x: 15,
+                      transition: { duration: 0.4, ease: "easeOut" },
+                    }}
+                  >
+                    <motion.div
+                      className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center"
+                      whileHover={{
+                        scale: 1.1,
+                        backgroundColor: "rgba(var(--primary), 0.3)",
+                        transition: { duration: 0.3 },
+                      }}
+                    >
                       <MapPin className="text-primary" size={24} />
-                    </div>
+                    </motion.div>
                     <div>
                       <h3 className="font-semibold">Address</h3>
                       <p className="text-gray-400">Alexandria, Egypt</p>
@@ -190,43 +329,72 @@ export default function Home() {
               </motion.div>
               <motion.form
                 className="space-y-6"
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: 60 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                transition={{
+                  duration: 1.0,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                  delay: 0.5,
+                }}
                 viewport={{ once: true }}
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <motion.input
                     type="text"
                     placeholder="First Name"
-                    className="bg-card border border-primary/20 rounded-lg p-3 w-full focus:outline-none focus:border-primary"
-                    whileFocus={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
+                    className="bg-card border border-primary/20 rounded-lg p-3 w-full focus:outline-none focus:border-primary transition-all duration-300"
+                    whileFocus={{
+                      scale: 1.02,
+                      borderColor: "var(--primary)",
+                      boxShadow: "0 0 0 3px rgba(var(--primary), 0.1)",
+                      transition: { duration: 0.2 },
+                    }}
                   />
                   <motion.input
                     type="text"
                     placeholder="Last Name"
-                    className="bg-card border border-primary/20 rounded-lg p-3 w-full focus:outline-none focus:border-primary"
-                    whileFocus={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
+                    className="bg-card border border-primary/20 rounded-lg p-3 w-full focus:outline-none focus:border-primary transition-all duration-300"
+                    whileFocus={{
+                      scale: 1.02,
+                      borderColor: "var(--primary)",
+                      boxShadow: "0 0 0 3px rgba(var(--primary), 0.1)",
+                      transition: { duration: 0.2 },
+                    }}
                   />
                 </div>
                 <motion.input
                   type="email"
                   placeholder="Email"
-                  className="bg-card border border-primary/20 rounded-lg p-3 w-full focus:outline-none focus:border-primary"
-                  whileFocus={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
+                  className="bg-card border border-primary/20 rounded-lg p-3 w-full focus:outline-none focus:border-primary transition-all duration-300"
+                  whileFocus={{
+                    scale: 1.02,
+                    borderColor: "var(--primary)",
+                    boxShadow: "0 0 0 3px rgba(var(--primary), 0.1)",
+                    transition: { duration: 0.2 },
+                  }}
                 />
                 <motion.textarea
                   placeholder="Message"
                   rows={6}
-                  className="bg-card border border-primary/20 rounded-lg p-3 w-full focus:outline-none focus:border-primary"
-                  whileFocus={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
+                  className="bg-card border border-primary/20 rounded-lg p-3 w-full focus:outline-none focus:border-primary transition-all duration-300"
+                  whileFocus={{
+                    scale: 1.02,
+                    borderColor: "var(--primary)",
+                    boxShadow: "0 0 0 3px rgba(var(--primary), 0.1)",
+                    transition: { duration: 0.2 },
+                  }}
                 />
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button size="lg" className="w-full">
+                <motion.div
+                  whileHover={{
+                    scale: 1.02,
+                    transition: { duration: 0.3, ease: "easeOut" },
+                  }}
+                  whileTap={{
+                    scale: 0.98,
+                    transition: { duration: 0.1 },
+                  }}
+                >
+                  <Button size="lg" className="w-full transition-all duration-300">
                     Send Message
                   </Button>
                 </motion.div>
@@ -239,9 +407,12 @@ export default function Home() {
       {/* Footer */}
       <motion.footer
         className="bg-card mt-20"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1.0,
+          ease: [0.25, 0.46, 0.45, 0.94],
+        }}
         viewport={{ once: true }}
       >
         <div className="container mx-auto px-4 py-12">
