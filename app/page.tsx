@@ -81,6 +81,7 @@ export default function Home() {
                 fill
                 className="rounded-2xl object-cover"
                 priority
+                styles={{ borderRadius: "50%" }}
               />
             </motion.div>
           </motion.div>
