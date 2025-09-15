@@ -69,7 +69,7 @@ export function Projects() {
       title: "Wafflo",
       description: `The Integrated Café Concept. A cozy spot offering freshly made waffles, sandwiches, and high-quality coffee.`,
       image: "/WAFFLO.jpg?height=300&width=400",
-      demoLink: "#",
+      demoLink: "https://wafflo.vercel.app",
       githubLink: "#",
     },
     // {
