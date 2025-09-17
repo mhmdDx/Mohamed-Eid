@@ -77,7 +77,7 @@ export default function Home() {
             >
               <Image
                 style={{ borderRadius: "50%", objectFit: "cover" }}
-              src="https://avatars.githubusercontent.com/u/208473855?v=4"
+              src="/main.jpg"
               alt="Profile"
               fill
               className="rounded-2xl object-cover"
