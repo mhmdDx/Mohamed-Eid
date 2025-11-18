@@ -68,7 +68,7 @@ export function Projects() {
     {
       title: "ROON",
       description: "A Fation design brand website showcasing the latest trends and collections.",
-      image: "/roon.jpeg?height=300&width=400",
+      image: "/ronn.jpeg?height=300&width=400",
       demoLink: "https://roonart.vercel.app/",
       githubLink: "#",
     },
