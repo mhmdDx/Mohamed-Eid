@@ -66,6 +66,13 @@ export function Projects() {
       githubLink: "#",
     },
     {
+      title: "ROON",
+      description: "A Fation design brand website showcasing the latest trends and collections.",
+      image: "/roon.jpeg?height=300&width=400",
+      demoLink: "https://roonart.vercel.app/",
+      githubLink: "#",
+    },
+    {
       title: "Wafflo",
       description: `The Integrated Café Concept. A cozy spot offering freshly made waffles, sandwiches, and high-quality coffee.`,
       image: "/WAFFLO.jpg?height=300&width=400",
@@ -79,13 +86,13 @@ export function Projects() {
       demoLink: "https://husheg.vercel.app/",
       githubLink: "#",
     },
-    {
-      title: "STOOM E-COMMERCE",
-      description: "An e-commerce platform for a clothing brand, featuring product listings and a shopping cart.",
-      image: "/stoom.jpg",
-      demoLink: "https://stoom-commerce.vercel.app/",
-      githubLink: "#",
-    },
+    // {
+    //   title: "STOOM E-COMMERCE",
+    //   description: "An e-commerce platform for a clothing brand, featuring product listings and a shopping cart.",
+    //   image: "/stoom.jpg",
+    //   demoLink: "https://stoom-commerce.vercel.app/",
+    //   githubLink: "#",
+    // },
     // {
     //   title: "Fitness Tracking App",
     //   description: "Personal fitness tracker with workout plans and progress monitoring.",
