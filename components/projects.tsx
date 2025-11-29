@@ -55,7 +55,7 @@ export function Projects() {
       title: "Salomil Co",
       description: "A modern website for a HPL company that provides cleaning services.",
       image: "/SALOMIL.jpg?height=300&width=400",
-      demoLink: "https://salomil.com/",
+      demoLink: "https://salomil.vercel.app",
       githubLink: "#",
     },
     {
