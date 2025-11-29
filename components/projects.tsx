@@ -86,13 +86,13 @@ export function Projects() {
       demoLink: "https://husheg.vercel.app/",
       githubLink: "#",
     },
-    // {
-    //   title: "STOOM E-COMMERCE",
-    //   description: "An e-commerce platform for a clothing brand, featuring product listings and a shopping cart.",
-    //   image: "/stoom.jpg",
-    //   demoLink: "https://stoom-commerce.vercel.app/",
-    //   githubLink: "#",
-    // },
+    {
+      title: "Warm E-commerce",
+      description: "An e-commerce shopify platform for a clothing brand, featuring product listings and a shopping cart.",
+      image: "/warm.jpeg",
+      demoLink: "https://warmstores.myshopify.com/",
+      githubLink: "#",
+    },
     // {
     //   title: "Fitness Tracking App",
     //   description: "Personal fitness tracker with workout plans and progress monitoring.",
