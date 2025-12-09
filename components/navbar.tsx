@@ -63,7 +63,7 @@ export function Navbar() {
             <Link href="#testimonials" className="text-white hover:text-primary transition-colors">
               Testimonials
             </Link>
-            <Link href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer">
+            <Link href="https://wa.me/+201220949800" target="_blank" rel="noopener noreferrer">
               <Button>Contact</Button>
             </Link>
           </div>

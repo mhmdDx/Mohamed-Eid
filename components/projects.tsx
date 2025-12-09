@@ -7,8 +7,8 @@ interface ProjectProps {
   description: string
   image: string | StaticImageData
   demoLink: string
-//   githubLink: string
- }
+  //   githubLink: string
+}
 
 function ProjectCard({ title, description, image, demoLink, }: ProjectProps) {
   return (
@@ -81,7 +81,7 @@ export function Projects() {
     },
     {
       title: "HUSH",
-      description:"A landing page for coffee brand HUSH, showcasing their products and story.",
+      description: "A landing page for coffee brand HUSH, showcasing their products and story.",
       image: "/hush.jpg",
       demoLink: "https://husheg.vercel.app/",
       githubLink: "#",
@@ -100,6 +100,27 @@ export function Projects() {
     //   demoLink: "#",
     //   githubLink: "#",
     // },
+    {
+      title: "Slasel Store",
+      description: "An Trendy Girls Accessories Store with a modern and user-friendly interface.",
+      image: "/1.jpg",
+      demoLink: "https://slasel-store.vercel.app/",
+      githubLink: "#",
+    },
+    {
+      title: "Yeat Store",
+      description: "An Streetwear Store with a modern and user-friendly interface.",
+      image: "/2.jpg",
+      demoLink: "https://yeatstore.vercel.app/",
+      githubLink: "#",
+    },
+    {
+      title: "Sparkle E-commerce",
+      description: "An e-commerce platform for a fashion brand, For Accessories  featuring product listings and a shopping cart.",
+      image: "/3.jpg",
+      demoLink: "https://sparklestores.vercel.app/",
+      githubLink: "#",
+    },
   ]
 
   return (
