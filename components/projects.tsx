@@ -52,6 +52,34 @@ function ProjectCard({ title, description, image, demoLink, }: ProjectProps) {
 export function Projects() {
   const projects = [
     {
+      title: "Almahaba",
+      description: "Official agent for Salomil Co, specializing in HPL and cleaning services.",
+      image: "/almhaba.jpeg",
+      demoLink: "https://www.almhaba.com/en",
+      githubLink: "#",
+    },
+    {
+      title: "Twist",
+      description: "A dynamic website for Twist energy drinks, featuring a modern and energetic design.",
+      image: "/twist.jpeg",
+      demoLink: "https://twist-five.vercel.app/",
+      githubLink: "#",
+    },
+    {
+      title: "Mosha Portfolio",
+      description: "Personal portfolio for a professional graphic designer and video editor.",
+      image: "/mosha.jpeg",
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      title: "Tarek Ezzat",
+      description: "Portfolio for a professional video editor and montier, showcasing creative video work.",
+      image: "/tarek.jpeg",
+      demoLink: "https://tarekezzat.vercel.app/",
+      githubLink: "#",
+    },
+    {
       title: "Salomil Co",
       description: "A modern website for a HPL company that provides cleaning services.",
       image: "/SALOMIL.jpg?height=300&width=400",
@@ -86,13 +114,13 @@ export function Projects() {
       demoLink: "https://husheg.vercel.app/",
       githubLink: "#",
     },
-    {
-      title: "Warm E-commerce",
-      description: "An e-commerce shopify platform for a clothing brand, featuring product listings and a shopping cart.",
-      image: "/warm.jpeg",
-      demoLink: "https://warmstores.myshopify.com/",
-      githubLink: "#",
-    },
+    // {
+    //   title: "Warm E-commerce",
+    //   description: "An e-commerce shopify platform for a clothing brand, featuring product listings and a shopping cart.",
+    //   image: "/warm.jpeg",
+    //   demoLink: "https://warmstores.myshopify.com/",
+    //   githubLink: "#",
+    // },
     // {
     //   title: "Fitness Tracking App",
     //   description: "Personal fitness tracker with workout plans and progress monitoring.",
@@ -114,13 +142,13 @@ export function Projects() {
       demoLink: "https://yeatstore.vercel.app/",
       githubLink: "#",
     },
-    {
-      title: "Sparkle E-commerce",
-      description: "An e-commerce platform for a fashion brand, For Accessories  featuring product listings and a shopping cart.",
-      image: "/3.jpg",
-      demoLink: "https://sparklestores.vercel.app/",
-      githubLink: "#",
-    },
+    // {
+    //   title: "Sparkle E-commerce",
+    //   description: "An e-commerce platform for a fashion brand, For Accessories  featuring product listings and a shopping cart.",
+    //   image: "/3.jpg",
+    //   demoLink: "https://sparklestores.vercel.app/",
+    //   githubLink: "#",
+    // },
   ]
 
   return (
