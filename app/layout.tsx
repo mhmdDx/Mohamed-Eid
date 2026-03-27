@@ -9,6 +9,12 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Mohamed Eid | Frontend Developer & UI/UX Specialist',
   description: 'Professional Frontend Developer based in Alexandria, Egypt. Specialized in React, Next.js, and crafting premium, responsive digital experiences.',
+  applicationName: 'Mohamed Eid',
+  appleWebApp: {
+    capable: true,
+    title: 'Mohamed Eid ',
+    statusBarStyle: 'default',
+  },
   keywords: [
     'Mohamed Eid',
     'Frontend Developer',
